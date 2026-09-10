@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>أكاديمي أهل العزم | البوابة الأكاديمية الشاملة</title>
+    <link rel="icon" href="https://i.ibb.co/ZRQqm5Vd/Chat-GPT-Image-26-2026-07-06-51.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- خلفيات زخرفية عصرية مضيئة -->
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+    <!-- =========================
+         الشريط العلوي (الهيدر)
+    ========================= -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- الشعار -->
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo" title="أكاديمي أهل العزم">
+                    <img src="https://i.ibb.co/ZRQqm5Vd/Chat-GPT-Image-26-2026-07-06-51.png" alt="شعار أهل العزم">
+                </a>
+            </div>
+
+            <!-- عنوان الموقع -->
+            <div class="header-title">
+                <h1>أكاديمي أهل العزم</h1>
+                <p class="header-subtitle">بوابتك الأكاديمية الأولى في جامعة العلوم الإسلامية العالمية</p>
+            </div>
+
+            <!-- أزرار الشريط العلوي -->
+            <nav class="navbar" aria-label="روابط التنقل الرئيسية">
+                <a href="https://ahelal3zem.github.io/Murshed-3zmawe/" class="nav-link" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>السنافر</span>
+                </a>
+
+                <a href="pages/about/index.html" class="nav-link">
+                    <i class="fa-solid fa-users"></i>
+                    <span>من نحن</span>
+                </a>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeX5jqUNrFJhJjpr_Pp9aatENqS0L1D1DO1FEFoXru41WLxbw/viewform?usp=header" class="nav-link nav-highlight" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-star"></i>
+                    <span>تقييم الخدمة</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =========================
+         المحتوى الرئيسي
+    ========================= -->
+    <main class="main-content">
+
+        <!-- القسم الترحيبي والبحث -->
+        <section class="hero-section">
+            <div class="hero-badge">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <span>خدمة طلابية متكاملة بروح العطاء</span>
+            </div>
+
+            <h2 class="section-title">اختر كليتك للمتابعة</h2>
+            <p class="section-desc">تصفح ملخصات المواد، خطط التخصصات الشجرية، ومتطلبات الجامعة لكل كلية بسهولة وسرعة</p>
+
+            <!-- شريط البحث والفلترة السريعة -->
+            <div class="search-box-wrapper">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="collegeSearchInput" placeholder="ابحث عن كليتك (مثل: تكنولوجيا، آداب، شريعة...)" autocomplete="off">
+                    <button id="clearSearchBtn" class="clear-search-btn" title="مسح البحث" style="display: none;">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- تصنيفات سريعة -->
+                <div class="filter-pills" id="filterPills">
+                    <button class="pill active" data-filter="all">جميع الكليات</button>
+                    <button class="pill" data-filter="sharia">الكليات الشرعية</button>
+                    <button class="pill" data-filter="tech">التكنولوجيا والفنون</button>
+                    <button class="pill" data-filter="humanities">العلوم والإنسانيات</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- شبكة الكليات -->
+        <section class="colleges-grid" id="collegesGrid">
+
+            <!-- كلية تكنولوجيا المعلومات -->
+            <div class="college-card" data-category="tech" data-name="كلية تكنولوجيا المعلومات الحاسوب البرمجيات الأمن الذكاء الاصطناعي" onclick="goToPage('pages/information-technology/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/chhvLt27/5816420913736520190.jpg" alt="كلية تكنولوجيا المعلومات" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-laptop-code"></i> تكنولوجيا</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية تكنولوجيا المعلومات</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية الفنون -->
+            <div class="college-card" data-category="tech" data-name="كلية الفنون والعمارة الاسلامية التصميم العمارة الفنون" onclick="goToPage('pages/arts/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/BHHwfBvV/5816420913736520183.jpg" alt="كلية الفنون والعمارة الإسلامية" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-palette"></i> فنون وعمارة</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية الفنون و العمارة الإسلامية</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية الآداب -->
+            <div class="college-card" data-category="humanities" data-name="كلية الآداب اللغة العربية الإنجليزية التاريخ الرياضيات الكيمياء" onclick="goToPage('pages/adab/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/jk207zfr/5816420913736520182.jpg" alt="كلية الآداب" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-feather-pointed"></i> آداب وعلوم</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية الآداب</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية الدعوة وأصول الدين -->
+            <div class="college-card" data-category="sharia" data-name="كلية الدعوة واصول الدين اصول الدين القران الكريم التفسير الحديث" onclick="goToPage('pages/shariaa/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/ZztCL901/5816420913736520186.jpg" alt="كلية الدعوة وأصول الدين" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-mosque"></i> دراسات إسلامية</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية الدعوة و أصول الدين</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية العلوم التربوية -->
+            <div class="college-card" data-category="humanities" data-name="كلية العلوم التربوية معلم صف تربية خاصة ارشاد نفسي طفل" onclick="goToPage('pages/aloom/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/1GKcfv9v/5816420913736520184.jpg" alt="كلية العلوم التربوية" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-school"></i> تربية وتعليم</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية العلوم التربوية</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية المال والأعمال -->
+            <div class="college-card" data-category="humanities" data-name="كلية المال والاعمال المحاسبة ادارة الاعمال العلوم المالية المصرفية نظم معلومات ادارية" onclick="goToPage('pages/money/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/HfbYrnH7/5816420913736520185.jpg" alt="كلية المال والأعمال" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-chart-line"></i> أعمال واقتصاد</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية المال والأعمال</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية الشيخ نوح القضاة للشريعة والقانون -->
+            <div class="college-card" data-category="sharia" data-name="كلية الشيخ نوح القضاة للشريعة والقانون القانون الفقه الشافعي الحنفي المالكي القضاء الشرعي" onclick="goToPage('pages/nooh/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/CG19DTc/5816420913736520187.jpg" alt="كلية الشيخ نوح القضاة للشريعة والقانون" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-scale-balanced"></i> شريعة وقانون</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية الشيخ نوح للشريعة والقانون</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كلية المذاهب الفقهية -->
+            <div class="college-card" data-category="sharia" data-name="كلية المذاهب الفقهية الفقه الحنفي الشافعي المالكي المذاهب" onclick="goToPage('pages/mathaheb/index.html')">
+                <div class="card-image-wrap">
+                    <img src="https://i.ibb.co/HLjV8Wm0/5816420913736520180.jpg" alt="كلية المذاهب الفقهية" loading="lazy">
+                    <div class="card-overlay"></div>
+                    <span class="card-badge"><i class="fa-solid fa-book-quran"></i> مذاهب فقهية</span>
+                </div>
+                <div class="card-info">
+                    <h3>كلية المذاهب الفقهية</h3>
+                    <div class="card-footer-info">
+                        <span class="card-action">عرض التخصصات والملخصات <i class="fa-solid fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- رسالة عدم وجود نتائج في البحث -->
+        <div id="noResultsMsg" class="no-results" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <h3>لم يتم العثور على كلية مطابقة لـ "<span id="searchKeyword"></span>"</h3>
+            <p>تأكد من كتابة اسم الكلية أو التخصص بشكل صحيح، أو تصفح قائمة الكليات كاملة.</p>
+            <button onclick="resetSearch()" class="reset-search-btn">عرض جميع الكليات</button>
+        </div>
+
+    </main>
+
+    <!-- زر الصعود للأعلى السلس -->
+    <button id="scrollTopBtn" class="scroll-top-btn" title="العودة لأعلى الصفحة" aria-label="العودة لأعلى">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+
+    <!-- =========================
+         الفوتر الفاخر
+    ========================= -->
+    <footer class="main-footer">
+        <div class="footer-inner">
+            <div class="footer-quote">
+                <div class="book-decoration">
+                    <svg viewBox="0 0 100 70" aria-hidden="true">
+                        <path d="M50 60 C38 52 25 48 10 48 L10 10 C25 10 39 14 50 22 C61 14 75 10 90 10 L90 48 C75 48 62 52 50 60Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                        <path d="M50 22 L50 60" fill="none" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </div>
+                <span>« بالعلم نبني المستقبل، وبالعزم نصل للقمم »</span>
+            </div>
+
+            <div class="social-links" aria-label="روابط منصات التواصل الاجتماعي">
+                <a href="https://www.facebook.com/share/18asBMgmfY/" target="_blank" rel="noopener" class="social-btn facebook" title="فيسبوك">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>فيسبوك</span>
+                </a>
+
+                <a href="https://www.instagram.com/azem_wise?igsh=azM2MGNla3VhaGpv" target="_blank" rel="noopener" class="social-btn instagram" title="إنستغرام">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>إنستغرام</span>
+                </a>
+
+                <a href="https://t.me/azem_wise" target="_blank" rel="noopener" class="social-btn telegram" title="تيليجرام">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span>تيليجرام</span>
+                </a>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 <strong>أهل العزم</strong>. جميع الحقوق محفوظة — صنع بعناية لخدمة الطلبة.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

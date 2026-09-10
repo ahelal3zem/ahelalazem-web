@@ -1,0 +1,613 @@
+﻿/* ==========================================================================
+   أكاديمي أهل العزم - تصميم صفحة من نحن (About Us Responsive Style)
+   ========================================================================== */
+
+:root {
+    --primary-navy: #0f172a;
+    --secondary-navy: #17233c;
+    --navy-surface: #1e293b;
+    --accent-burgundy: #5d0f0f;
+    --accent-burgundy-light: #7a1313;
+    --accent-burgundy-glow: rgba(93, 15, 15, 0.35);
+    --gold-accent: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    
+    --bg-main: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.82);
+    --card-border: rgba(23, 35, 60, 0.10);
+    
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --text-white: #ffffff;
+    
+    --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.09);
+    --shadow-lg: 0 18px 45px rgba(15, 23, 42, 0.14);
+    
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-full: 9999px;
+    
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Cairo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-burgundy);
+}
+
+/* =========================================
+   زخارف الخلفية
+   ========================================= */
+.bg-shape {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+.shape-one {
+    width: 420px;
+    height: 420px;
+    top: 100px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(93, 15, 15, 0.12) 0%, transparent 70%);
+}
+
+.shape-two {
+    width: 480px;
+    height: 480px;
+    top: 350px;
+    right: -160px;
+    background: radial-gradient(circle, rgba(23, 35, 60, 0.10) 0%, transparent 70%);
+}
+
+.shape-three {
+    width: 350px;
+    height: 350px;
+    bottom: -100px;
+    left: 20%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+}
+
+/* =========================================
+   الهيدر المتجاوب
+   ========================================= */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+    color: var(--text-white);
+    border-bottom: 3.5px solid var(--accent-burgundy);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.22);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-container {
+    width: 92%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    font-size: 0.92rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.back-btn i {
+    color: var(--gold-accent);
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.back-btn:hover {
+    background: var(--accent-burgundy);
+    border-color: var(--accent-burgundy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--accent-burgundy-glow);
+}
+
+.back-btn:hover i {
+    transform: scale(1.15);
+}
+
+.header-content {
+    text-align: center;
+    flex: 1;
+}
+
+.small-title {
+    display: block;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.header-content h1 {
+    font-family: "Amiri", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.header-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--gold-accent));
+    margin: 6px auto 0;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    padding: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(-4deg);
+    border-color: var(--gold-accent);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    display: block;
+}
+
+/* =========================================
+   المحتوى الرئيسي
+   ========================================= */
+main {
+    width: 92%;
+    max-width: 1140px;
+    margin: 45px auto 65px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   البطاقة الرئيسية (Hero Card)
+   ========================================= */
+.hero-card {
+    position: relative;
+    overflow: hidden;
+    padding: 45px 50px;
+    margin-bottom: 35px;
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: var(--shadow-md);
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent-burgundy), var(--secondary-navy));
+}
+
+.hero-decoration {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(93, 15, 15, 0.15);
+    left: -80px;
+    bottom: -110px;
+    pointer-events: none;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-burgundy);
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: rgba(93, 15, 15, 0.08);
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+}
+
+.hero-card h2 {
+    font-family: "Amiri", serif;
+    font-size: 2.2rem;
+    color: var(--secondary-navy);
+    margin-bottom: 12px;
+}
+
+.hero-card p {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* =========================================
+   الرؤية والرسالة (Info Grid)
+   ========================================= */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-bottom: 35px;
+}
+
+.info-card {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 32px;
+    border-radius: var(--radius-lg);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-icon-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(93, 15, 15, 0.08);
+    color: var(--accent-burgundy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 1px solid rgba(93, 15, 15, 0.15);
+}
+
+.card-line {
+    width: 45px;
+    height: 3.5px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--gold-accent));
+    margin-bottom: 16px;
+}
+
+.info-card h2 {
+    font-family: "Amiri", serif;
+    font-size: 1.9rem;
+    color: var(--secondary-navy);
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    font-weight: 500;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(93, 15, 15, 0.3);
+    box-shadow: var(--shadow-lg);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* =========================================
+   بطاقة الأهداف (Goals Card)
+   ========================================= */
+.goals-card {
+    position: relative;
+    padding: 45px 40px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--primary-navy) 100%);
+    color: #ffffff;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.goals-heading {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 35px;
+}
+
+.goals-heading .section-label {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--gold-accent);
+}
+
+.goals-heading h2 {
+    font-family: "Amiri", serif;
+    font-size: 2.3rem;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+.heading-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--gold-accent));
+    margin: 10px auto 0;
+    border-radius: 10px;
+}
+
+.goals-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.goal {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.goal:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+}
+
+.goal-number {
+    font-family: "Cairo", sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--gold-accent);
+    background: rgba(212, 175, 55, 0.15);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.goal p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: #f1f5f9;
+}
+
+/* =========================================
+   الفوتر
+   ========================================= */
+footer {
+    width: 100%;
+    background: linear-gradient(180deg, var(--secondary-navy) 0%, var(--primary-navy) 100%);
+    color: var(--text-white);
+    text-align: center;
+    border-top: 4px solid var(--accent-burgundy);
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-inner {
+    width: 92%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 0 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.book-decoration {
+    width: 30px;
+    height: 22px;
+    color: var(--gold-accent);
+    opacity: 0.9;
+}
+
+.book-decoration svg {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-quote {
+    font-family: "Amiri", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.footer-line {
+    width: 50px;
+    height: 2px;
+    background: var(--accent-burgundy);
+    border-radius: 4px;
+}
+
+footer small {
+    font-size: 0.82rem;
+    color: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   التجاوب مع الشاشات
+   ========================================= */
+@media (max-width: 850px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .goals-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .hero-card {
+        padding: 35px 28px;
+    }
+
+    .goals-card {
+        padding: 35px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 14px 0 12px;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-card {
+        padding: 28px 20px;
+    }
+
+    .hero-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-card p {
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+
+    .info-card {
+        padding: 28px 20px;
+    }
+
+    .info-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .info-card p {
+        font-size: 0.95rem;
+    }
+
+    .goals-card {
+        padding: 28px 16px;
+    }
+
+    .goals-heading h2 {
+        font-size: 1.8rem;
+    }
+
+    .goal {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .goal p {
+        font-size: 0.9rem;
+    }
+
+    .footer-quote {
+        font-size: 1.15rem;
+    }
+}

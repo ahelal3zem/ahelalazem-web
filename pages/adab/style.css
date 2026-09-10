@@ -1,0 +1,544 @@
+﻿/* ==========================================================================
+   أكاديمي أهل العزم - تصميم صفحة الكلية المطور والمتجاوب (College Hub Style)
+   ========================================================================== */
+
+:root {
+    --primary-navy: #0f172a;
+    --secondary-navy: #17233c;
+    --accent-burgundy: #5d0f0f;
+    --accent-burgundy-light: #7a1313;
+    --accent-burgundy-glow: rgba(93, 15, 15, 0.35);
+    --gold-accent: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    
+    --bg-main: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.82);
+    --card-border: rgba(23, 35, 60, 0.10);
+    --card-hover-border: rgba(93, 15, 15, 0.35);
+    
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --text-white: #ffffff;
+    
+    --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.09);
+    --shadow-hover: 0 18px 40px rgba(93, 15, 15, 0.16);
+    
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Cairo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-burgundy);
+}
+
+/* =========================================
+   الخلفيات الزخرفية المضيئة
+   ========================================= */
+.bg-decor {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.decor-1 {
+    width: 420px;
+    height: 420px;
+    top: 50px;
+    right: -140px;
+    background: radial-gradient(circle, rgba(93, 15, 15, 0.10) 0%, transparent 70%);
+}
+
+.decor-2 {
+    width: 450px;
+    height: 450px;
+    bottom: 50px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(23, 35, 60, 0.08) 0%, transparent 70%);
+}
+
+/* =========================================
+   الهيدر المتجاوب
+   ========================================= */
+header {
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+    color: var(--text-white);
+    border-bottom: 3.5px solid var(--accent-burgundy);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.22);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-container {
+    width: 92%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* زر العودة للرئيسية */
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    font-size: 0.92rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.home-btn i {
+    color: var(--gold-accent);
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.home-btn:hover {
+    background: var(--accent-burgundy);
+    border-color: var(--accent-burgundy-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px var(--accent-burgundy-glow);
+}
+
+.home-btn:hover i {
+    transform: scale(1.15);
+}
+
+/* عنوان الكلية */
+.header-center {
+    text-align: center;
+    flex: 1;
+}
+
+.header-center h1 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-center .college-tag {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+/* الشعار */
+.logo {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    padding: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(-4deg);
+    border-color: var(--gold-accent);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    display: block;
+}
+
+/* =========================================
+   المحتوى والبطاقات (Cards Grid)
+   ========================================= */
+main {
+    width: 92%;
+    max-width: 1240px;
+    margin: 40px auto 65px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-intro h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--secondary-navy);
+    position: relative;
+    display: inline-block;
+}
+
+.page-intro h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3.5px;
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--gold-accent));
+    border-radius: 10px;
+    margin: 8px auto 0;
+}
+
+/* شبكة البطاقات */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    width: 100%;
+}
+
+/* بطاقة القسم */
+.hub-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.3s ease;
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.hub-card:nth-child(1) { animation-delay: 0.05s; }
+.hub-card:nth-child(2) { animation-delay: 0.1s; }
+.hub-card:nth-child(3) { animation-delay: 0.15s; }
+.hub-card:nth-child(4) { animation-delay: 0.2s; }
+.hub-card:nth-child(5) { animation-delay: 0.25s; }
+
+/* الخط العلوي المميز */
+.hub-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-burgundy), var(--secondary-navy));
+    z-index: 5;
+    transition: var(--transition);
+}
+
+/* صورة البطاقة */
+.card-img-holder {
+    width: 100%;
+    height: 195px;
+    overflow: hidden;
+    position: relative;
+    background: #e2e8f0;
+}
+
+.card-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.4) 100%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* تفاصيل البطاقة */
+.card-body {
+    padding: 18px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--secondary-navy);
+    line-height: 1.45;
+    text-align: center;
+    transition: color 0.25s ease;
+}
+
+.card-arrow {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(23, 35, 60, 0.12);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-burgundy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: color 0.25s ease;
+}
+
+.card-arrow i {
+    transition: transform 0.25s ease;
+}
+
+/* Hover States */
+.hub-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--card-hover-border);
+    box-shadow: var(--shadow-hover);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.hub-card:hover::before {
+    height: 5px;
+    background: linear-gradient(90deg, var(--gold-accent), var(--accent-burgundy));
+}
+
+.hub-card:hover .card-img-holder img {
+    transform: scale(1.06);
+}
+
+.hub-card:hover .card-img-overlay {
+    opacity: 0.35;
+}
+
+.hub-card:hover .card-body h3 {
+    color: var(--accent-burgundy);
+}
+
+.hub-card:hover .card-arrow {
+    color: var(--accent-burgundy-light);
+}
+
+.hub-card:hover .card-arrow i {
+    transform: translateX(-4px);
+}
+
+/* =========================================
+   الفوتر وشريط العبارة
+   ========================================= */
+.quote-bar {
+    width: 100%;
+    margin-top: auto;
+    background: linear-gradient(180deg, var(--secondary-navy) 0%, var(--primary-navy) 100%);
+    color: var(--text-white);
+    text-align: center;
+    padding: 30px 15px 22px;
+    border-top: 4px solid var(--accent-burgundy);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.quote-bar-inner {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-decoration {
+    width: 30px;
+    height: 22px;
+    color: var(--gold-accent);
+    opacity: 0.9;
+}
+
+.book-decoration svg {
+    width: 100%;
+    height: 100%;
+}
+
+.quote-bar span {
+    font-family: "Amiri", serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.quote-bar small {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   التجاوب مع الشاشات المختلفة
+   ========================================= */
+
+/* الأجهزة اللوحية (Tablets <= 900px) */
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .header-center h1 {
+        font-size: 1.45rem;
+    }
+
+    .card-img-holder {
+        height: 175px;
+    }
+}
+
+/* الهواتف الذكية (Mobile <= 640px) */
+@media (max-width: 640px) {
+    header {
+        position: relative;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 14px 0 12px;
+    }
+
+    .home-btn {
+        padding: 7px 16px;
+        font-size: 0.85rem;
+    }
+
+    .header-center h1 {
+        font-size: 1.35rem;
+    }
+
+    .header-center .college-tag {
+        font-size: 0.78rem;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    main {
+        width: 92%;
+        margin: 24px auto 45px;
+    }
+
+    .page-intro h2 {
+        font-size: 1.45rem;
+    }
+
+    /* عمود واحد في الهاتف لعرض فائق الجمال والراحة */
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .hub-card {
+        border-radius: var(--radius-md);
+    }
+
+    .card-img-holder {
+        height: 185px;
+    }
+
+    .card-body h3 {
+        font-size: 1.15rem;
+    }
+
+    .quote-bar {
+        padding: 24px 12px 18px;
+    }
+
+    .quote-bar span {
+        font-size: 1.12rem;
+    }
+}
+
+
+
