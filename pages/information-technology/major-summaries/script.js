@@ -1,7 +1,7 @@
 const summaries = [
     {
         name: "ملخص قواعد البيانات",
-        link: "https://drive.google.com/file/d/19OZcoLXwZD4bWwnmAphOSadIlFcfM1lp/view?usp=sharing"
+        link: "https://drive.google.com/file/d/1veE8F79LZRkCaR-011DOu6nHDuVLHNZ8/view?usp=sharing"
     }
 ];
 
