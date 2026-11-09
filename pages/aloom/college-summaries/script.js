@@ -6,11 +6,6 @@ const summaries = [
         link: "https://drive.google.com/file/d/1mqXFno7LaXgSMnTw7h9sa_snxANUs_HJ/view?usp=sharing "
     },
 
-     
-     {
-        name: "ملخص تكنولوجيا التعليم و التعلم (ميد)       ",
-        link: "https://drive.google.com/file/d/1mqXFno7LaXgSMnTw7h9sa_snxANUs_HJ/view?usp=sharing "
-    },
       {
         name: "ملخص الاحصاء في العلوم التربوية       ",
         link: "https://drive.google.com/file/d/15AHsuHu2A9sTO87Cnt2TodhjRttxUmSS/view?usp=sharing "
