@@ -8,7 +8,7 @@ const summaries = [
 
       {
         name: "ملخص الاحصاء في العلوم التربوية       ",
-        link: "    "
+        link: " https://drive.google.com/file/d/15AHsuHu2A9sTO87Cnt2TodhjRttxUmSS/view?usp=sharing  "
     },
 
     {
