@@ -67,7 +67,7 @@ const universityRequirements = [
 
     {
         name: "ملخص مادة الريادة والابتكار",
-        link: "https://drive.google.com/file/d/1B_DUWwafQpledffvpAd6adVI4kWb5zvF/view?usp=sharing"
+        link: "https://drive.google.com/file/d/1JrtjTwl50t8vHTEkL40tlFJogcQQ2hnx/view?usp=sharing"
     },
 
     {
